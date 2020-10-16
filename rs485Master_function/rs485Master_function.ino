@@ -3,15 +3,18 @@ void setup() {
   valveSetup();
 }
 
-int state=0;
+int state=0, t;
 void loop() {
-  Serial.print("Return: ");
-  Serial.println(valveCommand(1, 1, state));
-  if (state == 0){
-    state = 1;  
+  if (millis()-t > 500)
+  {
+    Serial.print("Return: ");
+    Serial.println(valveCommand(1, 1, state));
+    if (state == 0){
+      state = 1;  
+    }
+    else{
+      state = 0;
+    }
+    t = millis();
   }
-  else{
-    state = 0;
-  }
-  delay(500);
 }
