@@ -34,6 +34,7 @@ void valveSetup()
 //***********MAIN FUNCTION**************
 int valveCommand(int recievingDeviceID, int commandSetting, int commandValue)
 {
+  delay(1); //give slaves a moment to do their stuff if master is sending messages in succesion
   //message to send
   byte msg [] = { 
      recievingDeviceID,    //id of the device we are sending to
