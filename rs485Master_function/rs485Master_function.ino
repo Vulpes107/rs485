@@ -16,5 +16,7 @@ void loop() {
       state = 0;
     }
     t = millis();
+    Serial.print("Led state: ");
+    Serial.println(valveCommand(1, 2, 0));
   }
 }
